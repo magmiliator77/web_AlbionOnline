@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Albion online</title>
+</head>
+<body>
+    <div class="contenedor">
+        <a href="#" class="button" id="btn-video">Click aquí</a>
+        <a href="#" class="button" id="btn-secreto" style="display: none;">Botón Secreto</a> <!-- Botón secreto -->
+    </div>
+
+    <script>
+        const button = document.getElementById('btn-video');
+        const btnSecreto = document.getElementById('btn-secreto');
+        let interval;
+
+        // Al hacer clic, abre una nueva ventana con el primer archivo .mp4
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.open('video1.mp4', '_blank'); // Cambia 'video1.mp4' por el nombre de tu video
+        });
+
+        // Detectar Ctrl + rueda del ratón
+        window.addEventListener('wheel', function(event) {
+            if (event.ctrlKey && event.deltaY > 0) { // Si se presiona Ctrl y se hace scroll hacia abajo
+                event.preventDefault(); // Evitar el comportamiento por defecto
+                document.body.style.transform = 'scale(0.5)'; // Reduce la escala al 50%
+                document.body.style.transformOrigin = '0 0'; // Origen de transformación
+                btnSecreto.style.display = 'block'; // Muestra el botón secreto
+            }
+        });
+
+        // Al hacer clic en el botón secreto, abre una nueva ventana con otro archivo .mp4
+        btnSecreto.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.open('video2.mp4', '_blank'); // Cambia 'video2.mp4' por el nombre de tu segundo video
+
+            // Cambia el color de fondo continuamente
+            if (!interval) {
+                interval = setInterval(changeBackgroundColor, 1000); // Cambia cada 1000 ms
+            }
+        });
+
+        // Función para cambiar el color de fondo
+        function changeBackgroundColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33A8']; // Array de colores
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor; // Cambia el color de fondo
+        }
+    </script>
+</body>
+
+
+
+
+</html>

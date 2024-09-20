@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    height: 100vh; /* Altura del body igual a la altura de la ventana */
+    background-color: rgba(7, 41, 126, 1); /* Corrección del color rgba */
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Hace que el contenedor cubra el 100% de la pantalla */
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #ed0e0e;
+    background: #692016;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f76003), to(#692016));
+    background: -webkit-linear-gradient(top, #f76003, #692016);
+    background: -moz-linear-gradient(top, #f76003, #692016);
+    background: -ms-linear-gradient(top, #f76003, #692016);
+    background: -o-linear-gradient(top, #f76003, #692016);
+    padding: 18.5px 37px;
+    border-radius: 24px;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #ffffff;
+    font-size: 23px;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.button:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #04ff00;
+}
+
+.button:active {
+    border-top-color: #0544ff;
+    background: #0544ff;
+}
